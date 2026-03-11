@@ -11,6 +11,10 @@ console.log("MONGO_URI:", process.env.MONGO_URI);
 const app = express();
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.send("Hospital Patient API is running");
+});
+
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("MongoDB connected"))
